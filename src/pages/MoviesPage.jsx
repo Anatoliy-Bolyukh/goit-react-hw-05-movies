@@ -22,7 +22,6 @@ const MoviesPage = () => {
         
   }, [query, page]);
     
-
     return (
         <>
             <MoviesSearchForm setSearch={setSearch} />

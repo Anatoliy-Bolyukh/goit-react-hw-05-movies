@@ -1,7 +1,22 @@
+import MovieDetails from 'components/MovieDetails/MovieDetails';
+import { useState, useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
+import { movieDetails } from '../MoviesAPI/moviesApi';
+
 const MovieDetailsPage = () => {
-    return ( 
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum est sapiente maxime nostrum ipsam repellendus veniam reprehenderit aspernatur perferendis odit, quis veritatis dolorum at ratione explicabo quas numquam iste tempore.</h1>
-     );
-}
- 
+  const [movie, setMovie] = useState(null);
+    const { movieId } = useParams();
+
+  useEffect(() => {
+    movieDetails(movieId).then(data => setMovie(data));
+    console.log(movie);
+  }, []);
+
+    return (
+        <>
+            {movie &&<MovieDetails movie={movie} />}
+        </>
+  ) 
+};
+
 export default MovieDetailsPage;
