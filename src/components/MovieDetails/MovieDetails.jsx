@@ -4,13 +4,12 @@ import { NavLink, Outlet } from "react-router-dom";
 const MovieDetails = ({ movie }) => {
     const { original_title,
         id,
-        popularity,
         poster_path,
         overview,
         genres,
         vote_average,
     } = movie;
-    console.log(movie);
+    // console.log(movie);
     
     const genreName = () => {
         return genres.map(({ name }) => name);

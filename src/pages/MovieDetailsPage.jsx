@@ -1,6 +1,6 @@
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 import { useState, useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { movieDetails } from '../MoviesAPI/moviesApi';
 
 const MovieDetailsPage = () => {

@@ -1,12 +1,21 @@
-// import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getMovieCast } from '../MoviesAPI/moviesApi';
+import Cast from 'components/Cast/Cast';
 
 const CastPage = () => {
-    return ( 
-        <>
-        <h1>dasfasasdasfafasdasdasdasf</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, obcaecati animi explicabo rem ratione hic saepe cumque neque laudantium ad, asperiores iste at dolores autem fuga ipsum officia est. Dolorum.</p>
-            </>
-     );
-}
- 
+  const [movieCast, setMovieCast] = useState([]);
+  const { movieId } = useParams();
+
+  useEffect(() => {
+    getMovieCast(movieId).then(data => setMovieCast(data.cast));
+  }, []);
+    
+  return (
+    <>
+          <Cast movieCast={ movieCast } />
+    </>
+  );
+};
+
 export default CastPage;
