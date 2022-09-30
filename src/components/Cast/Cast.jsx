@@ -1,8 +1,5 @@
 import { List, Item, Img } from './Cast.style'
 const Cast = ({ movieCast }) => {
-  console.log(movieCast);
-
-
 
   return (
     <List>

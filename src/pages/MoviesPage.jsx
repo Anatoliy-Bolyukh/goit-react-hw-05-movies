@@ -13,11 +13,10 @@ const MoviesPage = () => {
 
     const query = search.get('query');
     const page = search.get('page');
-    console.log(search);
-    
+
+
     useEffect(() => {
         if (!query) return;
-        console.log(query);
         searchMovie(query, page).then((data) => setMovies(data.results));
         
   }, [query, page]);

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Outlet,  useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import {
   BtnBack,
   Image,
@@ -11,8 +11,7 @@ import {
 const MovieDetails = ({ movie }) => {
   const { original_title, id, poster_path, overview, genres, vote_average } = movie;
 
-  const navigate = useNavigate();
-  console.log(navigate);
+  // const navigate = useNavigate();
 
   const genreName = () => {
     return genres.map(({ name }) => name);

@@ -9,7 +9,7 @@ const ReviewsPage = () => {
 
   useEffect(() => {
     getMovieReviews(movieId).then(data => setMovieReviews(data.results));
-  }, []);
+  }, [movieId]);
 
   return (
     <>
