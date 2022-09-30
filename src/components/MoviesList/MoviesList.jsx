@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
 import { Item, Img, List, Title } from './moviesList.styled';
@@ -20,5 +22,13 @@ const MovieList = ({ movies }) => {
     </List>
   );
 };
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    original_title: PropTypes.string,
+    poster_pat: PropTypes.string,
+  }))
+}
 
 export default MovieList;

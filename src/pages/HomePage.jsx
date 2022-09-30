@@ -7,7 +7,7 @@ import MovieList from '../components/MoviesList/MoviesList';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
-
+console.log(movies);
 
    useEffect(() => {
     getTrending().then(setMovies);

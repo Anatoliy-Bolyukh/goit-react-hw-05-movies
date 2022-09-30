@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react'
 import { MoviesForm, MoviesInput, MoviesBtn, BtnIcon } from './moviesSearchForm.style';
 
@@ -29,5 +30,10 @@ const MoviesSearchForm = ({setSearch}) => {
     </MoviesForm>
   );
 };
+
+MoviesSearchForm.propTypes = {
+ setSearch: PropTypes.func
+}
+
 
 export default MoviesSearchForm;

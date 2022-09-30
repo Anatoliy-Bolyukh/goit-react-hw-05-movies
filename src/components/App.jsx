@@ -1,13 +1,15 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import HomePage from 'pages/HomePage';
-import MoviesPage from 'pages/MoviesPage';
+// import HomePage from 'pages/HomePage';
+// import MoviesPage from 'pages/MoviesPage';
 import AppBar from './AppBar/AppBar';
 import ScrollToTop from 'react-scroll-to-top';
 
 const MovieDetailsPage = lazy(() => import('pages/MovieDetailsPage'));
 const CastPage = lazy(() => import('pages/CastPage'));
 const ReviewsPage = lazy(() => import('pages/ReviewsPage'));
+const HomePage = lazy(() => import('pages/HomePage'));
+const MoviesPage = lazy(() => import('pages/MoviesPage'));
 
 
 export const App = () => {

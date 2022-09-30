@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
@@ -46,5 +47,18 @@ const MovieDetails = ({ movie }) => {
     </>
   );
 };
+
+MovieDetails.propTypes = {
+  movie: PropTypes.shape({
+    original_title: PropTypes.string,
+    id: PropTypes.string,
+    poster_path: PropTypes.string,
+    overview: PropTypes.string,
+    genres: PropTypes.string,
+    vote_average: PropTypes.number ,
+  })
+
+  
+}
 
 export default MovieDetails;

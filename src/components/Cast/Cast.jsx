@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { List, Item, Img } from './Cast.style'
 const Cast = ({ movieCast }) => {
 
@@ -20,5 +21,16 @@ const Cast = ({ movieCast }) => {
     </List>
   );
 };
+
+Cast.propTypes = {
+  movieCast: PropTypes.arrayOf(PropTypes.shape({
+    character:  PropTypes.string,
+    cast_id: PropTypes.string,
+    name: PropTypes.string,
+    popularity: PropTypes.string,
+    profile_path: PropTypes.string,
+  }))
+}
+
 
 export default Cast;

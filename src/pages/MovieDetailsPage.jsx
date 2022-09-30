@@ -5,7 +5,8 @@ import { movieDetails } from '../MoviesAPI/moviesApi';
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
-    const { movieId } = useParams();
+  const { movieId } = useParams();
+
 
   useEffect(() => {
     movieDetails(movieId).then(data => setMovie(data));
