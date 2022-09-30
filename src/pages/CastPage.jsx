@@ -9,7 +9,7 @@ const CastPage = () => {
 
   useEffect(() => {
     getMovieCast(movieId).then(data => setMovieCast(data.cast));
-  }, []);
+  }, [movieId]);
     
   return (
     <>
