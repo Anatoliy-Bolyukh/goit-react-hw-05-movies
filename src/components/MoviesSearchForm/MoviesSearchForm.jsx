@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { MoviesForm, MoviesInput, MoviesBtn, BtnIcon } from './moviesSearchForm.style';
 
 const MoviesSearchForm = ({setSearch}) => {
   const [searchMovies, setSearchMovies] = useState('');
@@ -14,15 +15,18 @@ const MoviesSearchForm = ({setSearch}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <MoviesForm onSubmit={handleSubmit}>
+      <MoviesInput
+        autoComplete='off'
         type="text"
         name="searchInput"
         value={searchMovies}
         onChange={hendleChange}
       />
-      <button type="submit">Search</button>
-    </form>
+      <MoviesBtn type="submit">
+        <BtnIcon>Search</BtnIcon>
+      </MoviesBtn>
+    </MoviesForm>
   );
 };
 

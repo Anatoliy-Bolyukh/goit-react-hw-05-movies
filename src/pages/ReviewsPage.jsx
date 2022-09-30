@@ -1,10 +1,21 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getMovieReviews } from '../MoviesAPI/moviesApi';
+import Reviews from '../components/Reviews/Reviews';
 
+const ReviewsPage = () => {
+  const [movieReviews, setMovieReviews] = useState([]);
+  const { movieId } = useParams();
 
-const reviewsPage = () => {
-    return ( 
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis molestias perferendis labore distinctio tenetur tempora consequatur, accusamus facere, libero nobis ex in autem iusto magni ea, natus quod omnis ducimus?</p>
-     );
-}
- 
-export default reviewsPage;
+  useEffect(() => {
+    getMovieReviews(movieId).then(data => setMovieReviews(data.results));
+  }, []);
+
+  return (
+    <>
+      <Reviews movieReviews={movieReviews} />
+    </>
+  );
+};
+
+export default ReviewsPage;

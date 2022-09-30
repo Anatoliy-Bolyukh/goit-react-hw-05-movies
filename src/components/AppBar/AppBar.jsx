@@ -1,11 +1,14 @@
-import s from './AppBar.module.css'
+// import { NavLink } from 'react-router-dom';
+import { Header, AppLink } from './AppBar.style';
+
 
 const AppBar = () => {
-    return ( 
-        <header className={s.header}>
+  return (
+      <Header>
+      <AppLink to="/movies">Movies</AppLink>
+      <AppLink to="/" end>home</AppLink>
+    </Header>
+  );
+};
 
-        </header>
-     );
-}
- 
 export default AppBar;

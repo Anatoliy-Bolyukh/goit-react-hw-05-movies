@@ -6,7 +6,6 @@ import MovieList from '../components/MoviesList/MoviesList';
 // import MoviesSearchForm from 'components/MoviesSearchForm/MoviesSearchForm';
 
 const HomePage = () => {
-  //  const [search, setSearch] = useSearchParams();
   const [movies, setMovies] = useState([]);
 
 
@@ -16,7 +15,6 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>Home</h1>
       <MovieList movies={movies} />
     </>
   );

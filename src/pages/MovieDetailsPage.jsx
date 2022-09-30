@@ -9,8 +9,7 @@ const MovieDetailsPage = () => {
 
   useEffect(() => {
     movieDetails(movieId).then(data => setMovie(data));
-    console.log(movie);
-  }, []);
+  }, [movieId]);
 
     return (
         <>
